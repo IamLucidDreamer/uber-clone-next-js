@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import tw from "tailwind-styled-components"
 import Map from './components/Map'
+import Link from 'next/link'
 
 export default function Home() {
 
@@ -20,10 +21,12 @@ export default function Home() {
           </Profile>
         </Header>
         <ActionButtons>
+        <Link href="/search">
           <ActionButton>
           <ActionButtonImage src="https://i.ibb.co/cyvcpfF/uberx.png" />
             Ride
           </ActionButton>
+          </Link>
           <ActionButton>
           <ActionButtonImage src="https://i.ibb.co/n776JLm/bike.png" />
             Wheels
@@ -33,6 +36,9 @@ export default function Home() {
             Reserve
           </ActionButton>
         </ActionButtons>
+        <InputButton>
+          Where To
+        </InputButton>
       </ActionItems>
     </Wrapper>
   )
@@ -95,4 +101,15 @@ transition text-xl
 
 const ActionButtonImage = tw.img`
 h-3/5
+`
+
+const InputButton = tw.div`
+h-20
+bg-gray-200
+text-xl
+flex
+items-center
+mt-8
+pl-8
+rounded-full
 `
